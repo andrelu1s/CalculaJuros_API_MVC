@@ -3,7 +3,13 @@
     ViewBag.Title = "CalculoDeJurosView";
 }
 
-<h2>@ViewBag.Message</h2>
+    <div class="row" style="text-align:center">
+
+        <h2>@ViewBag.Message</h2>
+
+        <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("showmethecode", "Juros", FormMethod.Get)'">Show me the code</button>
+
+    </div>
 
 @using (Html.BeginForm("Index", "Juros"))
 {
@@ -24,8 +30,6 @@
 }
 
 <hr />
-
-<h1>Cálculo:</h1>
 
 @using (Html.BeginForm("CalculaJuros", "Juros",FormMethod.Get))
 {
