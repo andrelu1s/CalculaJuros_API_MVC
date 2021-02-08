@@ -73,7 +73,7 @@ namespace CalculaJuros_API_MVC.Controllers
         [Route("showmethecode")]
         public string ShowMeTheCode()
         {
-            return "https://github.com/";
+            return "https://github.com/andrelu1s/CalculaJuros_API_MVC.git";
         }
     }
 }
