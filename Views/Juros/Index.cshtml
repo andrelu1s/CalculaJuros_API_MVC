@@ -1,0 +1,62 @@
+﻿
+@{
+    ViewBag.Title = "CalculoDeJurosView";
+}
+
+<h2>@ViewBag.Message</h2>
+
+@using (Html.BeginForm("Index", "Juros"))
+{
+    <div class="row" style="padding-top:5px;">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-3">
+                    Taxa de Juros:
+                </div>
+                <div class="col-3">
+                    <input type="text" readonly id="txtTaxaJuros" class="form-control" value="@ViewBag.TaxaJuros">
+                </div>
+                <div class="col-6">
+                </div>
+            </div>
+        </div>
+    </div>
+}
+
+<hr />
+
+<h1>Cálculo:</h1>
+
+@using (Html.BeginForm("CalculaJuros", "Juros",FormMethod.Get))
+{
+    <div class="row" style="padding-top:5px;">
+        <div class="col-12">
+            <div class="row">
+                <div class="col-3">
+                    Valor Inicial:
+                </div>
+                <div class="col-3">
+                    <input type="text" id="txtValorInicial" class="form-control" value="@ViewBag.ValInicial">
+                </div>
+                <div class="col-3">
+                    Qtd. meses:
+                </div>
+                <div class="col-3">
+                    <input type="text" id="txtMeses" class="form-control" value="@ViewBag.Meses">
+                </div>
+                <button type="button" class="btn btn-primary" onclick="location.href='@Url.Action("Index", "Juros")?valorInicial=' + document.getElementById('txtValorInicial').value + '&meses='+ document.getElementById('txtMeses').value ">Calcular:</button>
+                <br><br><br>
+
+                <div class="col-3">
+                    Resultado:
+                </div>
+                <div class="col-3">
+                    <input type="text" readonly id="txtResultado" class="form-control" value="@ViewBag.Resultado">
+                </div>
+
+            </div>
+        </div>
+    </div>
+}
+
+
